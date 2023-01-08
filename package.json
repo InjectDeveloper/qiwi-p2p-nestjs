@@ -1,0 +1,72 @@
+{
+  "name": "@inject_dev/qiwi-p2p-nestjs",
+  "version": "1.2.4",
+  "description": "Dynamic module qiwi p2p for nestjs",
+  "author": "Inject Developer",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/InjectDeveloper/qiwi-p2p-nestjs"
+  },
+  "scripts": {
+    "start:dev": "tsc-watch -p tsconfig.build.json --onSuccess \"node dist/main.js\"",
+    "build": "tsc",
+    "prepare": "npm run build",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "keywords": [
+    "nestjs",
+    "QiwiP2P"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^8.4.7"
+  },
+  "dependencies": {
+    "axios": "^1.2.2"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^8.4.7",
+    "@nestjs/config": "^2.1.0",
+    "@nestjs/core": "^8.4.7",
+    "@nestjs/platform-express": "^8.4.7",
+    "@nestjs/testing": "8.4.7",
+    "@types/express": "4.17.13",
+    "@types/jest": "^28.1.4",
+    "@types/node": "18.0.1",
+    "@types/supertest": "^2.0.12",
+    "jest": "^28.1.2",
+    "prettier": "^2.7.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.5.5",
+    "supertest": "^6.2.4",
+    "ts-jest": "^28.0.5",
+    "ts-node": "^10.8.2",
+    "tsc-watch": "^5.0.3",
+    "tsconfig-paths": "^4.0.0",
+    "tslint": "^5.20.1",
+    "typescript": "^4.7.4"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
