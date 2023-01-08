@@ -1,6 +1,6 @@
 {
   "name": "@inject_dev/qiwi-p2p-nestjs",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Dynamic module qiwi p2p for nestjs",
   "author": "Inject Developer",
   "license": "MIT",

@@ -103,6 +103,47 @@ export class AppService {
 }
 ```
 
+<br/>
+
+## FEATURES
+
+#### Create bill
+```TypeScript
+// app.service.ts
+import { QiwiP2PService, IBillInfoSuccessResponce } from '@inject_dev/qiwi-p2p-nestjs'
+import { Injectable } from '@nestjs/common';
+
+@Injectable()
+export class AppService {
+  constructor(
+    private readonly p2pService: QiwiP2PService
+  ) {}
+  
+  async createBill(paymentInfo): Promise<IBillInfoSuccessResponce> {
+    // paymentInfo: ICreateBillParams
+    return this.p2pService.createBill(paymentInfo);
+  }
+}
+```
+
+#### Get bill info
+```TypeScript
+// app.service.ts
+import { QiwiP2PService, IBillInfoSuccessResponce, IRecipient } from '@inject_dev/qiwi-p2p-nestjs'
+import { Injectable } from '@nestjs/common';
+
+@Injectable()
+export class AppService {
+  constructor(
+    private readonly p2pService: QiwiP2PService
+  ) {}
+  
+  async createBill(id): Promise<IBillInfoSuccessResponce & IRecipient> {
+    return this.p2pService.getBillInfo(id /* bill id */)
+  }
+}
+```
+
 ## Contributing
 
 Any suggestions for improving the project are welcome.
